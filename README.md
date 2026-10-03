@@ -1,61 +1,168 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Marispica — Full-Stack Web Application
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Web application sviluppata con **Laravel** come progetto universitario di Ingegneria Informatica.
 
-## About Laravel
+Il progetto realizza una piattaforma web per la gestione e la fruizione dei servizi di un villaggio turistico, integrando **backend, frontend, database, autenticazione e API esterne**.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+> University Project / Portfolio Project  
+> Tutti i dati presenti nell'applicazione sono fittizi.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Funzionalità
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- 🔐 Registrazione, login, logout e gestione del profilo
+- 🔑 Recupero e reset della password
+- 👤 Gestione utenti e ruoli
+- 📅 Gestione delle prenotazioni
+- 🎫 Gestione degli eventi
+- ❤️ Sistema di like
+- 💬 Sistema di feedback
+- 🖼️ Gestione delle immagini
+- 🤖 Chatbot tramite OpenAI API
+- 🌤️ Integrazione con Weatherstack API
+- 🎟️ Integrazione con Ticketmaster API
+- ⚡ Comunicazione asincrona tramite JavaScript Fetch API
+- ✅ Validazione dei dati
+- 🗄️ Gestione del database tramite Laravel Eloquent e migrations
 
-## Learning Laravel
+## Tech Stack
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### Backend
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+- PHP 8.2+
+- Laravel 12
+- Laravel UI
+- Eloquent ORM
+- Doctrine DBAL
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### Frontend
 
-## Laravel Sponsors
+- Blade
+- JavaScript
+- Fetch API
+- Axios
+- Bootstrap 5
+- Tailwind CSS
+- Sass / SCSS
+- Vite
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+### Database & Tools
 
-### Premium Partners
+- MySQL
+- Laravel Migrations
+- Composer
+- NPM
+- Git / GitHub
+- PHPUnit
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+## Architettura
 
-## Contributing
+Il progetto segue il pattern **MVC (Model-View-Controller)** di Laravel.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+```text
+app/
+├── Http/
+│   └── Controllers/
+├── Models/
+└── ...
 
-## Code of Conduct
+database/
+├── migrations/
+└── seeders/
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+public/
+├── css/
+├── js/
+└── images/
 
-## Security Vulnerabilities
+resources/
+├── js/
+├── sass/
+└── views/
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+routes/
+├── api.php
+└── web.php
+```
 
-## License
+Le integrazioni con servizi esterni vengono gestite tramite il backend Laravel, mantenendo le API key fuori dal codice pubblico e configurandole tramite variabili d'ambiente.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## Installazione
+
+### Requisiti
+
+- PHP >= 8.2
+- Composer
+- Node.js / NPM
+- MySQL
+
+### Setup
+
+```bash
+git clone https://github.com/NunzioAleSaraniti/marispica-laravel.git
+cd marispica-laravel
+
+composer install
+npm install
+
+cp .env.example .env
+php artisan key:generate
+```
+
+Configura nel file `.env` la connessione al database:
+
+```env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=nome_database
+DB_USERNAME=utente
+DB_PASSWORD=password
+```
+
+Aggiungi inoltre le API key necessarie:
+
+```env
+OPENAI_API_KEY=
+WEATHERSTACK_API_KEY=
+TICKETMASTER_API_KEY=
+```
+
+Esegui le migrations:
+
+```bash
+php artisan migrate
+```
+
+Avvia l'applicazione:
+
+```bash
+php artisan serve
+```
+
+In un secondo terminale:
+
+```bash
+npm run dev
+```
+
+## API interne
+
+Backend endpoints:
+
+```text
+POST /api/chat
+GET  /api/weather
+GET  /api/events
+```
+
+Le richieste dal frontend vengono gestite tramite JavaScript e inoltrate al backend Laravel.
+
+## Contesto
+
+Progetto realizzato nell'ambito del percorso universitario in **Ingegneria Informatica**, con particolare attenzione allo sviluppo web full-stack, alla gestione del database, all'autenticazione degli utenti e all'integrazione di servizi REST esterni.
+
+## Note
+
+Il progetto ha finalità **didattiche e di portfolio**.
+
+Tutti i dati presenti nell'applicazione sono fittizi.
