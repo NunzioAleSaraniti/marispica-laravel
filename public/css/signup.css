@@ -1,0 +1,390 @@
+* {
+    box-sizing: border-box;
+    max-width: 100%;
+}
+
+body {
+
+    margin: 0;
+    font-family: "PT Sans", Arial;
+    color: white;
+    width: auto;
+    height: auto;
+   
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    cursor: pointer;
+}
+
+i {
+    font-size: 16px;
+    padding: 0px 10px;
+    color: white;
+}
+
+.section {
+
+    display: flex;
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+
+h1 {
+    font-size: 18px;
+    color:#ffffff;
+    margin: 0 0 30px 0;
+}
+
+span {
+    margin: 20px 0;
+    color:#ffffff;
+}
+
+.margin-right--space-more {
+    margin-right: 70px;
+}
+
+input.textbox {
+    font-size: 20px;
+    padding-bottom: 20px;
+}
+
+#toggle_password {
+    width: 25px;
+    height: 25px;
+}
+
+.label_and_textbox {
+    margin-bottom: 30px;
+    margin-top:20px;
+}
+
+.error.show {
+    visibility: visible;
+}
+
+.error {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #c7a31c;
+    border-radius: 15px;
+    padding: 17px 15px;
+    width: 100%;
+    height: max-content;
+    max-width: max-content;
+    z-index: 4;
+    text-align: center;
+    margin: 0;
+    visibility: hidden;
+
+}
+
+.error span {
+    
+    color: #fff;
+    font-size: 14px;
+    line-height: 0;
+}
+
+.error_label_js label {
+    transition: color 0.4s ease;
+    color: #c7a31c;
+    border-color: #c7a31c;
+}
+
+.error_label_js span {
+    opacity: 1;
+    font-size: 16wwpx;
+    color: #c7a31c;
+}
+
+.error_label_js input {
+    border-color: #c7a31c;
+}
+
+.wrong {
+
+    font-size: 14px;
+    color: #c7a31c;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    height: 1em;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    min-height: 10px; 
+    line-height: 1.2em;
+    margin-top: 10px;
+    visibility: hidden;
+
+}
+
+.label_and_textbox .wrong.visible {
+    visibility: visible;
+    opacity: 1;  
+}
+
+.password .wrong.visible {
+    min-height: unset;
+}
+
+form {
+    position: relative;
+    margin: 0;
+    margin: 10px 0;
+    padding: 70px;
+    min-height: max-content;
+}
+
+main {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    padding: 140px 30px 50px 30px;
+    height: auto;
+    min-height:100vh;
+    max-height: max-content;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('/images/Immagini_Varie/etna.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+}
+
+.central_builder {
+
+    display: flex;
+    width: 80%;
+    height: auto;
+    min-width: 300px;
+    max-width: 700px;
+    flex-direction: column;
+    margin-bottom: 20px;
+    
+}
+
+#form_title.centered.title_box {
+
+    position: absolute;
+    top: 80px;
+    left: calc(50% - 160px);
+    z-index: 3;
+    background-color: transparent;
+    border: 5px solid whitesmoke;
+    backdrop-filter: blur(10px);
+    border-radius: 30px;
+    padding: 20px;
+
+}
+
+#form_title.centered.title_box h2 {
+
+    line-height: 1;
+    font-weight: bold;
+    color: white;
+}
+
+.password_container {
+    position: relative;
+}
+
+  
+.password_container button {
+    
+    position: absolute;
+    right: 10px;
+    top: 55%;
+    transform: translateY(-50%);
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-size: 14px;
+
+}
+
+.password_container button img {
+
+    height: 13px;
+    width: 13px;
+    opacity: 0.6;
+
+}
+
+.login_button {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    min-height: 30px;
+    min-width: 100px;
+    max-width:max-content;
+    padding: 5%;
+    background-color:  rgb(9, 62, 119);
+    white-space: nowrap;
+    transition-property: background-color;
+    transition-duration: .3s;
+    color: white;
+    font-size: 18px;
+    font-family: "PT Sans", Arial;
+    font-weight: bold;
+    border: 0;
+    margin-bottom: 20px;
+    
+}
+
+.signup_button {
+
+    min-height: 60px;
+    min-width: 300px;
+    width: 100%;
+    background-color: #093E77;
+    color: whitesmoke;
+    white-space: nowrap;
+    font-size: 18px;
+    font-family: "PT Sans", Arial;
+    font-weight: bold;
+    border: 0px;
+    border-radius: 15px;
+    margin: 30px 0 40px 0;
+    line-height: 0;
+    transition: background-color 0.3s ease, color 0.3s ease;
+
+}
+
+#signup.centered {
+    margin-top:50px;
+}
+
+.signup_button:hover {
+
+    background-color: #c7a31c;
+    color: white;
+    cursor: pointer;
+
+}
+
+.wrong {
+
+    font-size: 10px;
+    color: red;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    height: 1em;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    min-height: 10px; 
+    line-height: 1.2em;
+    margin-top: 10px;
+    visibility: hidden;
+
+}
+
+.label_and_textbox .wrong.visible {
+    visibility: visible;
+    opacity: 1;  
+}
+
+.password .wrong.visible {
+    min-height: unset;
+}
+
+.allow {
+
+    margin-bottom: 10px;
+    line-height: 1.5;
+
+}
+
+.allow label {
+    transition: color 0.1s ease;
+}
+
+.centered {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-height:55px;
+    margin: 20px 0;
+    
+}
+
+.menu {
+
+    display: flex;
+    position:absolute;
+    bottom: 50%;
+    right: calc(100% + 5px);
+    height: 100%;
+    padding: 20px;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    background-color: #093E77;
+    border-top: 1px solid white;
+    flex-direction: column;
+    height: fit-content;
+    width: fit-content;
+    max-width: 70px;
+    max-height: 400px;
+    border-radius: 15px;
+
+}
+
+.menu .standard_wrapper {
+    flex-direction: column;
+}
+
+.menu .standard_wrapper i {
+    
+    margin-right:5px;
+    padding: 10px 5px;
+    color: white;
+    transition: color 0.3s ease, font-size 0.2s ease;
+
+
+}
+
+.menu .standard_wrapper a {
+    border-radius: 50%;
+}
+
+.menu .standard_wrapper i:hover {
+    color:#c7a31c;
+    font-size: 25px;
+    transition: color 0.3s ease, font-size 0.2s ease;
+}
+
+.centered.row_items {
+    flex-direction: row;
+}
+
+.centered.row_items a {
+
+    color: #093E77;
+    margin-left: 10px;
+    font-size: 15px;
+    transition: font-size 0.3s ease, color 0.3s ease;
+
+}
+
+.centered.row_items a:hover {
+    color:#c7a31c;
+    font-size: 18px;
+    font-weight: bold;
+}
